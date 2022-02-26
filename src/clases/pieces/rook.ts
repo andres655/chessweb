@@ -9,32 +9,32 @@ class rook extends piece{
    avaibleMovements(position: [number, number], boardMatrix: cell[][]) {
    const [x, y] = position;
    for (let i = 1; i <=8; i += 1) {
-   const CellpossibleMove = boardMatrix[x][y+i];
+   const CellpossibleMove = this.getCellFromCoord([x,y+i],boardMatrix);
      if (!CellpossibleMove) break;
-     if (CellpossibleMove.piece) break;
+     if (CellpossibleMove.piece && CellpossibleMove.piece.color==this.color) break;
      CellpossibleMove.setavaibleMove(true);
-   
+     if (CellpossibleMove.piece) break;
      }
       for (let i = 1; i <=8; i += 1) {
-        const CellpossibleMove = boardMatrix[x][y-i];
+        const CellpossibleMove = this.getCellFromCoord([x,y-i],boardMatrix)
         if (!CellpossibleMove) break;
-        if (CellpossibleMove.piece) break;
+        if (CellpossibleMove.piece && CellpossibleMove.piece.color==this.color) break;
        CellpossibleMove.setavaibleMove(true);
- 
+        if (CellpossibleMove.piece) break;
      }
       for (let i = 1; i <=8; i += 1) {
-        const CellpossibleMove = boardMatrix[x+i][y];
+        const CellpossibleMove = this.getCellFromCoord([x+i,y],boardMatrix)
         if (!CellpossibleMove) break;
-        if (CellpossibleMove.piece) break;
+        if (CellpossibleMove.piece && CellpossibleMove.piece.color==this.color) break;
         CellpossibleMove.setavaibleMove(true);
- 
+        if (CellpossibleMove.piece) break;
      }
           for (let i = 1; i <=8; i += 1) {
-       const CellpossibleMove = boardMatrix[x-i][y];
-       if (!CellpossibleMove) break;
-       if (CellpossibleMove.piece) break;
+       const CellpossibleMove = this.getCellFromCoord([x-i,y],boardMatrix)
+        if (!CellpossibleMove) break;
+        if (CellpossibleMove.piece && CellpossibleMove.piece.color==this.color) break;
        CellpossibleMove.setavaibleMove(true);
-       
+        if (CellpossibleMove.piece) break;
  
 }
  }

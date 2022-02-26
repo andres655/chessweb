@@ -10,9 +10,21 @@ class piece{
     this.color = color;
     this.miau = miau;
     this.type = type;
-    
-  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   }
+     
+   getCellFromCoord(position:[number,number],boardMatrix: cell[][]):cell | null {
+     const [x, y] = position;
+     const rank = boardMatrix[x] || [];
+     const cell = rank[y];
+     return cell;
+ }
   avaibleMovements(position:[number,number],boardMatrix: cell[][]) {
     throw new Error('missing');
     
