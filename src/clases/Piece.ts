@@ -5,17 +5,13 @@ class piece{
   color: color;
   miau: string[];
   type: PieceType;
+  moved: boolean;
   
   constructor(color, miau,type) {
     this.color = color;
     this.miau = miau;
     this.type = type;
- 
- 
- 
- 
- 
- 
+    this.moved = false;
  
   }
      
